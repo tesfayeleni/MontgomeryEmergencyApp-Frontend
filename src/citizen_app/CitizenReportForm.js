@@ -89,14 +89,15 @@ const CitizenReportForm = ({ onSubmit, userRole }) => {
             <Select placeholder="Select issue type">
               <Select.Option value="crowding">Crowding / High Traffic</Select.Option>
               <Select.Option value="hazard">Hazard or Obstruction</Select.Option>
-              <Select.Option value="suspicious_activity">Suspicious Activity</Select.Option>
-                {(userRole === 'business_owner' || userRole === 'event_organizer') && (
-                  <>    
-                    <Select.Option value="property_damage">Property Damage</Select.Option>
-                    <Select.Option value="business_security">Business Security Concern</Select.Option>
-                    <Select.Option value="infrastructure">Infrastructure Issue</Select.Option>
-                  </>
-                )}
+              {(userRole === 'business_owner' || userRole === 'event_organizer') && (
+                <Select.Option value="property_damage">Property Damage</Select.Option>
+              )}
+              {(userRole === 'business_owner' || userRole === 'event_organizer') && (
+                <Select.Option value="business_security">Business Security Concern</Select.Option>
+              )}
+              {(userRole === 'business_owner' || userRole === 'event_organizer') && (
+                <Select.Option value="infrastructure">Infrastructure Issue</Select.Option>
+              )}
               <Select.Option value="other">Other</Select.Option>
             </Select>
           </Form.Item>
