@@ -99,12 +99,15 @@ const IntelligenceDashboard = ({ isGovernment = false }) => {
   };
 
   const filteredSignals = signals
-    .filter(signal => {
-      const signalTime = new Date(signal.created_at);
-      const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
-      return signalTime > twoHoursAgo;
-    })
-    .slice(0, 10);
+  .filter(signal => {
+    const signalTime = new Date(signal.created_at);
+    const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+    return signalTime > twentyFourHoursAgo;
+  })
+  .filter((signal, index, self) =>
+    index === self.findIndex(s => s.title === signal.title)
+  )
+  .slice(0, 10);
 
   const sortedZones = [...riskScores].sort((a, b) => b.final_risk_score - a.final_risk_score);
 
