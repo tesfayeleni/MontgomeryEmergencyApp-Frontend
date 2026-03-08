@@ -101,7 +101,7 @@ const IntelligenceDashboard = ({ isGovernment = false }) => {
   const filteredSignals = signals
     .filter(signal => {
       const signalTime = new Date(signal.created_at);
-      const twoHoursAgo = new Date(Date.now() - 2 * 60 * 60 * 1000);
+      const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
       return signalTime > twoHoursAgo;
     })
     .slice(0, 10);
