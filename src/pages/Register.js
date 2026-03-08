@@ -58,7 +58,6 @@ const Register = () => {
             <Form.Item label="Role">
               <Select value={role} onChange={setRole}>
                 <Option value="resident">Resident</Option>
-                <Option value="business_owner">Business Owner</Option>
                 <Option value="event_organizer">Event Organizer</Option>
                 <Option value="police_admin">Police Admin (if authorized)</Option>
                 <Option value="fire_admin">Fire Admin (if authorized)</Option>
