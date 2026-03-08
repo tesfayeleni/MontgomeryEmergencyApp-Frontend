@@ -34,8 +34,16 @@ export const authService = {
   register: (name, email, password, role) =>
     api.post('/auth/register', { name, email, password, role }),
   
-  login: (email, password) =>
-    api.post('/auth/login', { email, password }),
+  // login: (email, password) =>
+  //   api.post('/auth/login', { email, password }),
+  login: (email, password) => {
+    const formData = new URLSearchParams();
+    formData.append('username', email);  // OAuth2 uses 'username' not 'email'
+    formData.append('password', password);
+    return api.post('/auth/login', formData, {
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+    });
+  },
   
   getCurrentUser: () =>
     api.get('/auth/me'),
