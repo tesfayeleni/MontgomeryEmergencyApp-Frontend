@@ -52,27 +52,6 @@ const CitizenApp = () => {
       children: <CitizenReportForm onSubmit={loadPublicFeed} />,
     },
   ];
-  
-  // Event organizers get event submission
-  if (user?.role === 'event_organizer') {
-    tabs.push({
-      key: '3',
-      label: '🎉 Submit Event',
-      children: <EventSubmissionForm />,
-    });
-  }
-
-  // Business owners get a dedicated alert tab
-  if (user?.role === 'business_owner') {
-    tabs.push({
-      key: '3',
-      label: '🏢 Business Alert',
-      children: <CitizenReportForm 
-        onSubmit={loadPublicFeed} 
-        userRole={user?.role}
-      />,
-    });
-  }
 
   // Add event tab only for event organizers
   if (user?.role === 'event_organizer') {
@@ -87,11 +66,11 @@ const CitizenApp = () => {
     <Layout className={styles.container}>
       <Header className={styles.header}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%' }}>
-          <div>
+          <div style={{ flex: 1, textAlign: 'center' }}>
             <h1>Montgomery Safety Center</h1>
             <p>Your Community's Real-Time Safety Information</p>
           </div>
-          <Button type="primary" danger onClick={handleLogout}>
+          <Button type="primary" danger onClick={handleLogout} style={{ flexShrink: 0 }}>
             Logout
           </Button>
         </div>
