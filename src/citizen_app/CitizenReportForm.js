@@ -29,10 +29,14 @@ const CitizenReportForm = ({ onSubmit, userRole }) => {
   };
 
   const onFinish = async (values) => {
-    if (!location) {
-      message.error('Please set your location first');
-      return;
-    }
+    await citizenService.submitReport({
+      report_type: values.report_type,
+      latitude: 32.3792,   // Montgomery city center default
+      longitude: -86.3077,
+      severity: values.severity,
+      description: `[${values.address}] ${values.description}`,
+      photo_url: values.photo_url || null,
+    });
 
     try {
       setLoading(true);
@@ -59,16 +63,23 @@ const CitizenReportForm = ({ onSubmit, userRole }) => {
     <Card title="Report a Non-Emergency Concern" className={styles.card}>
       <Spin spinning={loading}>
         <Form form={form} onFinish={onFinish} layout="vertical">
-          <div className={styles.locationBox}>
-            <Button type="primary" onClick={handleGetLocation} block>
-              📍 Get Current Location
-            </Button>
-            {location && (
-              <div className={styles.locationInfo}>
-                Location set: {location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}
-              </div>
-            )}
-          </div>
+          // <div className={styles.locationBox}>
+          //   <Button type="primary" onClick={handleGetLocation} block>
+          //     📍 Get Current Location
+          //   </Button>
+          //   {location && (
+          //     <div className={styles.locationInfo}>
+          //       Location set: {location.latitude.toFixed(4)}, {location.longitude.toFixed(4)}
+          //     </div>
+          //   )}
+          // </div>
+          <Form.Item
+            label="Location / Address"
+            name="address"
+            rules={[{ required: true, message: 'Please enter your address or nearest intersection' }]}
+          >
+            <Input placeholder="e.g. 3000 Rosa L Parks Ave, Westside" />
+          </Form.Item>
 
           <Form.Item
             label="Report Type"
