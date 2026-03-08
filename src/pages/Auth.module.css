@@ -1,0 +1,44 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.formCard {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.formCard h1 {
+  text-align: center;
+  color: #667eea;
+  margin-bottom: 10px;
+}
+
+.formCard h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.formCard p {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.formCard a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.formCard a:hover {
+  text-decoration: underline;
+}

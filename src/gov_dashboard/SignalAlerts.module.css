@@ -1,0 +1,66 @@
+.card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.alertsList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.alertItem {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.alertItem:hover {
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
+}
+
+.alertHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.alertHeader h4 {
+  margin: 0 15px 0 0;
+  color: #333;
+}
+
+.zone {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+.type {
+  background: #e6f7ff;
+  padding: 4px 8px;
+  border-radius: 2px;
+  font-size: 12px;
+  color: #0050b3;
+}
+
+.description {
+  margin: 10px 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.alertItem a {
+  color: #667eea;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.alertItem a:hover {
+  text-decoration: underline;
+}

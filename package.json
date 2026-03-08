@@ -1,0 +1,44 @@
+{
+  "name": "montgomery-emergency-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.18.0",
+    "axios": "^1.6.0",
+    "mapbox-gl": "^2.15.0",
+    "@mapbox/mapbox-gl-draw": "^1.4.0",
+    "@mapbox/mapbox-gl-geocoder": "^5.0.0",
+    "chart.js": "^4.4.0",
+    "react-chartjs-2": "^5.2.0",
+    "antd": "^5.11.0",
+    "@ant-design/icons": "^5.2.0",
+    "moment": "^2.29.4",
+    "geojson": "^0.5.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
+  "devDependencies": {
+    "react-scripts": "5.0.1"
+  }
+}

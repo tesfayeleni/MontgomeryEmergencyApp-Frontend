@@ -1,0 +1,167 @@
+.container {
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 32px;
+}
+
+.header {
+  background: #001529;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px 6px 0 0;
+  margin-bottom: 16px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Zone Cards */
+.zoneCard {
+  border-left: 4px solid;
+  height: 100%;
+}
+
+.zoneHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.zoneHeader h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.riskBadge {
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.demandInfo p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.predictionTimestamp {
+  font-size: 12px;
+  color: #666;
+  margin: 8px 0;
+  font-style: italic;
+}
+
+.explainability {
+  font-size: 12px;
+  color: #888;
+  margin-top: 8px;
+  padding: 6px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  border-left: 3px solid #1890ff;
+}
+
+.trend {
+  margin-top: 12px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.warning {
+  color: #F44336;
+  font-size: 12px;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+/* Signal Feed */
+.signalFeed {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.signalRow {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: white;
+}
+
+.severityDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.signalContent {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.signalTitle {
+  flex: 1;
+  font-weight: 500;
+}
+
+.signalTime {
+  color: #666;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.noSignals {
+  text-align: center;
+  color: #999;
+  padding: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .zoneCard {
+    margin-bottom: 16px;
+  }
+
+  .signalContent {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
